@@ -26,7 +26,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     end
 end
 
-srv = WEBrick::HTTPServer.new({BindAddress: "0.0.0.0", Port: 22559})
+srv = WEBrick::HTTPServer.new({BindAddress: "0.0.0.0", Port: 22559, AccessLog: []})
 srv.mount("/", MyServlet)
 trap("INT"){ srv.shutdown }
 srv.start
